@@ -5,6 +5,6 @@
 node() {
     stage('prepare') {
         checkout scm
-        mtaBuild script: this
+        buildExecute script:this
     }
 }
