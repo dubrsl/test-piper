@@ -5,6 +5,6 @@
 node() {
     stage('prepare') {
         checkout scm
-        buildExecute script:this
+        buildExecute script:this, buildTool: 'docker'
     }
 }
