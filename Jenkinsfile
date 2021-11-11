@@ -5,6 +5,6 @@
 node() {
     stage('prepare') {
         checkout scm
-        setupCommonPipelineEnvironment script:this
+        mtaBuild script: this
     }
 }
