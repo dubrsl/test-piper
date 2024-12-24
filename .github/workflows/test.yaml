@@ -1,0 +1,30 @@
+name: Check PR merge
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'dev'
+    tags:
+      - 'v*'
+  pull_request_target:
+    branches:
+      - 'dev'
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.merge_commit_sha }}"
+
+      - name: Run build 
+        run: |
+          cat Jenkinsfile
