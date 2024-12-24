@@ -9,7 +9,8 @@ on:
       - 'v*'
   pull_request_target:
     branches:
-      - 'dev'
+      - 'main'
+      - 'dev'     
 
 jobs:
   build:
